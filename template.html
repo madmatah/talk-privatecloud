@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$if(css)$
+$for(css)$
+  <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+$else$
+<style>
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(fonts/Oswald.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(fonts/Ubuntu.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(fonts/Ubuntu-bold.woff) format('woff');
+}
+
+
+
+
+  html { background-color: black; }
+  a { color: #7abddc; text-decoration: none; } a:hover {text-decoration: underline;}
+  footer { position: absolute; bottom: 20px; right: 10px; }
+  strong,code {color: #FAE50B; font-weight: normal;} 
+  pre>code, code.sourceCode { color: #FFF; margin-left: 50px; }
+  body {
+      font-family: 'Oswald', arial, serif;
+      background-color: white;
+      color: white;
+      font-size: 30px;
+      background: #151515;
+  }
+
+
+  /* Transition effect */
+  section {
+      -moz-transition: left 400ms ease-in 0s;
+      -webkit-transition: left 400ms ease-in 0s;
+      -ms-transition: left 400ms ease-in 0s;
+      transition: left 400ms ease-in 0s;
+      background: #151515;
+  }
+  section { left: -150%; }
+  section[aria-selected] { left: 0; }
+  section[aria-selected] ~ section { left: +150% }
+
+  #talk-meta {
+    background: #151515 right bottom no-repeat  url("img/clermontech_mascotte.png");
+  }
+
+  .chapter { background-color: #000;}
+  .chapter h1 {line-height: 600px; vertical-align: middle; margin: 0; text-align: center; display: block}
+
+  h1,h2,h3,h4,h5,h6 {
+      font-family: 'Ubuntu', arial, serif;
+      margin: 20px 100px 0 100px;
+      font-weight: normal;
+  }
+
+  h1 {
+      color: #7abddc;
+      font-size: 45px;
+      text-shadow: 0px -1px 0px #000;
+      text-align: left;
+      margin-bottom: 20px;
+  }
+  h2 {
+      color: #FAE50B;
+      margin-top: 10px;
+      font-size: 40px;
+      text-align: left;
+  }
+  h3,h4,h5,h6 {
+      color: #FAE50B;
+      margin-top: 10px;
+      font-size: 30px;
+      text-align: left;
+  }
+  h1.title { color: #FFFFFF; }
+  .author { font-size: 30px; color: #7abddc; }
+
+  .date {color: #CCC; font-size: 20px; margin-top: 50px;}
+  footer {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+  }
+  ul {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 30px;
+      text-align: right;
+      border-right: 4px solid white;
+      padding-right: 40px;
+      min-width: 310px;
+      margin-left: 50px;
+      display: inline-block;
+  }
+  q, p {
+      margin: 0px 100px 10px;
+  }
+  p + p {
+    margin-top: 20px;
+  }
+  q:after {content: ""}
+  q:before {content: ""}
+  q {
+      display: block;
+      margin-top: 140px;
+  }
+  video {
+      position: absolute;
+      top: 210px;
+      width: 260px;
+      left: 445px;
+      box-shadow: 0 0 10px black;
+  }
+  #arrow {
+      position: absolute;
+      top: 165px;
+      left: 460px;
+      font-size: 100px;
+      color: white;
+
+  }
+  li {list-style-type: none}
+
+  pre {
+      font-size: 18px;
+      margin: 2em;
+  }
+
+  #conclusion {
+    font-family: 'Ubuntu', arial, serif;
+  }
+
+  #conclusion h3,
+  #conclusion h3 + ul {
+    position: absolute;
+    padding: 0;
+    width: 320px;
+    border-right: 0;
+    margin: 0;
+    font-size: 29px;
+  }
+
+  #conclusion #les-points-forts {
+    margin-top: 20px;
+    left: 100px;
+  }
+
+  #conclusion #les-points-forts + ul {
+    left: 100px;
+    margin-top: 70px;
+    color: #a7e15d;
+    text-align: left
+  }
+
+
+  #conclusion #les-points-faibles {
+    text-align: right;
+    margin-top: 20px;
+    right: 50px;
+  }
+
+  #conclusion #les-points-faibles + ul {
+    right: 50px;
+    margin-top: 70px;
+    color: #ff9c1b;
+  }
+
+</style>
+$endif$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+$if(title)$
+<section id="talk-meta">
+  <h1 class="title">$title$</h1>
+  <footer>
+$for(author)$
+  <h2 class="author">$author$</h2>
+$endfor$
+  <h3 class="date">$date$</h3>
+  </footer>
+</section>
+$endif$
+$for(include-before)$
+$include-before$
+$endfor$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+$dzslides-core$
+</body>
+</html>
