@@ -22,7 +22,13 @@
 
 ## Private Cloud OVH
 
-Solution de **cloud privé** basée sur **VMware vSphere**
+-> Nouveau nom : **Dedicated Cloud**
+
+Infrastructure de **cloud dédié** basée sur **VMware vSphere**
+
+\
+
+[http://www.ovh.com/fr/dedicated-cloud/](http://www.ovh.com/fr/dedicated-cloud/)
 
 ## Le principe
 
