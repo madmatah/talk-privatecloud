@@ -186,5 +186,5 @@ Une solution très satisfaisante pour notre cas.
 
 ## Merci !
 
-On en parle devant une bière ?
+On en parle devant des bières ?
 
